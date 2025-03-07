@@ -1,24 +1,26 @@
-﻿@model Category
+﻿<h1>Delete</h1>
+@model Category
 <form method="post">
+    <input asp-for="Id" hidden/>
     <div class="border p-3 mt-4">
         <div class="row pb-2">
-            <h2 class="text-primary">Create Category</h2>
+            <h2 class="text-primary">Delete Category</h2>
             <hr />
         </div>
         <div asp-validation-summary="All"></div>
         <div class="mb-3 row p-1">
-            <label asp-for="Name" class="form-label"></label>
-            <input asp-for="Name" class="form-control" />
+            <label asp-for="Name" class="p-0"></label>
+            <input asp-for="Name" disabled class="form-control" />
             <span asp-validation-for="Name" class="text-danger"></span>
         </div>
         <div class="mb-3 row p-1">
-            <label asp-for="DisplayOrder" class="form-label"></label>
-            <input asp-for="DisplayOrder" class="form-control" />
+            <label asp-for="DisplayOrder" class="p-0"></label>
+            <input asp-for="DisplayOrder" disabled class="form-control" />
             <span asp-validation-for="DisplayOrder" class="text-danger"></span>
         </div>
         <div class="row">
             <div class="col-md-6">
-                <button type="submit" class="btn btn-primary w-100">Create</button>
+                <button type="submit" class="btn btn-danger form-control">Delete</button>
             </div>
             <div class="col-md-6">
                 <a asp-controller="Category" asp-action="Index" class="btn btn-secondary w-100">
@@ -28,8 +30,3 @@
         </div>
     </div>
 </form>
-@section Scripts {
-    @{
-        <partial name="_ValidationScriptsPartial"/>
-    }
-}
